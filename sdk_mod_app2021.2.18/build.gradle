@@ -60,6 +60,5 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-//    api project(':sdk_module_i')
-//    api project(':sdk_module_app')
+    api 'com.github.redeyer:AndModApp:1.0.2'
 }
