@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 19
+        //noinspection ExpiredTargetSdkVersion,OldTargetApi
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        consumerProguardFiles 'proguard-unity.txt'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb', '.unityexp'] + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    packagingOptions {
+        doNotStrip '*/armeabi-v7a/*.so'
+        doNotStrip '*/arm64-v8a/*.so'
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.github.redeyer:AndModApp:1.0.2'
+}

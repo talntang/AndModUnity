@@ -1,0 +1,21 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://jitpack.io'
+            credentials { username 'jp_gi5pi8u2rq2k9tdjs3lsob045s' }
+        }
+        maven { url 'http://developer.huawei.com/repo/' }
+    }
+}
+rootProject.name = "AndModUnity"
+include ':sdk_mod_app2019.4.36'
+include ':sdk_mod_app2021.2.18'
+
+
+
+
